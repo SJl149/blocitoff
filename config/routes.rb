@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   authenticated :user do
     get 'users/show'
     root 'users#show', as: :authenticate_root
+    resources :tasks, only: [:create, :new, :index]
   end
 
   root 'home#index'

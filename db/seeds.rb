@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+task = Task.new(
+  name: 'Buy something',
+  user_id: 1
+)
+task.save!
+
+puts "#{Task.count} task created"
