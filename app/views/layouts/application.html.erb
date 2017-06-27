@@ -17,7 +17,7 @@
         <% if user_signed_in? %>
           <p class="navbar-text">Signed in as <%= current_user.username %></p>
           <ul class="nav navbar-nav navbar-right">
-            <li class="navbar-btn navbar-left"><%= link_to "Profile", users_show_path, :class => 'nav-tabs' %></li>
+            <li class="navbar-btn navbar-left"><%= link_to "Profile", profile_path, :class => 'nav-tabs' %></li>
             <li class="navbar-btn navbar-left"><%= link_to "Tasks", tasks_path, :class => 'nav-tabs' %></li>
             <li class="navbar-btn navbar-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete, :class => 'nav-tabs' %></li>
             <li class="navbar-btn navbar-right"><%= link_to 'Edit profile', edit_user_registration_path, :class => 'nav-tabs' %></li>

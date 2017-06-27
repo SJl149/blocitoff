@@ -2,12 +2,13 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations'}
 
-  get 'home/index'
+  resources :tasks, only: [:create, :new, :index, :destroy]
+
+  get 'profile', to: 'users#show'
 
   authenticated :user do
-    get 'users/show'
+
     root 'users#show', as: :authenticate_root
-    resources :tasks, only: [:create, :new, :index]
   end
 
   root 'home#index'
