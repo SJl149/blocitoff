@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  respond_to :html, :js
+
   def index
     @tasks = current_user.tasks
     @task = Task.new
@@ -21,14 +23,19 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
+    @task.destroy
 
-    if @task.destroy
-      flash[:notice] = "Task is accomplished!"
-      redirect_to tasks_path
-    else
-      flash.now[:alert] = "There was a problem checking off your task."
-      redirect_to tasks_path
-    end
+#    if @task.destroy
+#      flash[:notice] = "Task is accomplished!"
+#      respond_to do |format|
+#        format.html { redirect_to tasks_path }
+#        format.json { head :no_content }
+#        format.js   { render :layout => false }
+#      end
+#    else
+#      flash.now[:alert] = "There was a problem checking off your task."
+#      redirect_to tasks_path
+#    end
   end
 
   private

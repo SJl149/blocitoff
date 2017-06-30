@@ -1,8 +1,6 @@
 <tr>
   <td> &nbsp;&nbsp;&nbsp;&nbsp;&lt;<span class="pcode">li</span>&gt; <%= task.name %> &lt;<span class="pcode">/li</span>&gt;</td>
-  <td>
-
-      <%= link_to "", task, method: :delete, class: 'btn btn-success btn-sm glyphicon glyphicon-ok' %>
-
+  <td class="delete-task">
+      <%= link_to "", task, remote: true, method: :delete, class: 'btn btn-success btn-sm glyphicon glyphicon-ok' %>
   </td>
 </tr>
