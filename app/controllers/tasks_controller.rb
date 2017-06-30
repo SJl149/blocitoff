@@ -23,13 +23,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find(params[:id])
-
-    if @task.destroy
-      flash[:notice] = "Task is accomplished!"
-    else
-      flash.now[:alert] = "There was a problem checking off your task."
-      redirect_to tasks_path
-    end
+    @task.destroy
   end
 
   private
