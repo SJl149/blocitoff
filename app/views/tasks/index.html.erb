@@ -1,18 +1,23 @@
 <div class="panel panel-success">
   <div class="panel-body">
     <h2 class="text-center">Tasks To Do</h2>
-    <br>
+    <%= render 'tasks/form' %>
     <table class="table table-striped table-hover ">
       <thead>
         <tr>
-          <th>0 &lt;<span class="pcode">ol</span>&gt;</th>
+          <th> &lt;<span class="pcode">ol</span>&gt;</th>
           <th>Accomplished</th>
         </tr>
       </thead>
       <tbody>
         <%= render @tasks %>
       </tbody>
+      <tfoot>
+        <tr>
+          <th> &lt;<span class="pcode">/ol</span>&gt;</th>
+          <th></th>
+        </tr>
+      </tfoot>
     </table>
   </div>
 </div>
-<%= link_to "Create", new_task_path, class: "btn btn-success btn-block" %>

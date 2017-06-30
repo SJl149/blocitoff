@@ -1,6 +1,9 @@
 class TasksController < ApplicationController
+  respond_to :html, :js
+
   def index
     @tasks = current_user.tasks
+    @task = Task.new
   end
 
   def new
@@ -11,12 +14,16 @@ class TasksController < ApplicationController
     @task = current_user.tasks.new(task_params)
 
     if @task.save
-      flash[:notice] = "Task was saved successfully."
       redirect_to tasks_path
     else
       flash.now[:alert] = "Error creating task. Please try again."
       render :new
     end
+  end
+
+  def destroy
+    @task = Task.find(params[:id])
+    @task.destroy
   end
 
   private
