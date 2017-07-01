@@ -17,6 +17,8 @@ class TasksController < ApplicationController
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
+    done = current_user.tasks_done + 1
+    current_user.update_attribute(:tasks_done, done)
   end
 
   private

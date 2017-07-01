@@ -5,4 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :tasks
+  after_initialize :init
+
+  def init
+    self.tasks_done ||= 0
+  end
 end
