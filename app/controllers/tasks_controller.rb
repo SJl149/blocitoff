@@ -1,5 +1,4 @@
 class TasksController < ApplicationController
-  respond_to :html, :js
 
   def index
     @tasks = current_user.tasks
@@ -12,13 +11,7 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.new(task_params)
-
-    if @task.save
-      redirect_to tasks_path
-    else
-      flash.now[:alert] = "Error creating task. Please try again."
-      render :new
-    end
+    @task.save
   end
 
   def destroy

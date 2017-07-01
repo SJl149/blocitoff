@@ -3,4 +3,5 @@
   <td class="delete-task">
       <%= link_to "", task, remote: true, method: :delete, class: 'btn btn-success btn-sm glyphicon glyphicon-ok' %>
   </td>
+  <td><span class="bcode">$(</span><span class="gcode"> <%= distance_of_time_in_words(task.created_at, Time.now) %> </span><span class="bcode">)</span></td>
 </tr>
