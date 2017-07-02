@@ -7,10 +7,11 @@ Rails.application.routes.draw do
   get 'profile', to: 'users#show'
 
   authenticated :user do
-
     root 'users#show', as: :authenticate_root
   end
 
+  get 'about', to: 'home#about'
+  
   root 'home#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
