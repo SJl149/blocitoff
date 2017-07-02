@@ -23,6 +23,10 @@ module UsersHelper
     tasks.each do |task|
       expiring_count += 1 if present - task.created_at > 518399
     end
-    expiring_count
+    if expiring_count == 1
+      "#{expiring_count} task expiring!"
+    else
+      "#{expiring_count} tasks expiring!"
+    end
   end
 end
