@@ -15,4 +15,14 @@ module UsersHelper
     ]
     inspirational_quotes.sample
   end
+
+  def expiring_tasks
+    expiring_count = 0
+    present = Time.now
+    tasks = current_user.tasks
+    tasks.each do |task|
+      expiring_count += 1 if present - task.created_at > 518399
+    end
+    expiring_count
+  end
 end
