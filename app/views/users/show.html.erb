@@ -11,7 +11,18 @@
     <h4 style="text-indent: 3em;">&lt;<span class="pcode">to-do</span>&gt;<span class="bcode"> <%= @tasks_todo %> </span>&lt;<span class="pcode">/done</span>&gt;</h4>
     <h4>&lt;<span class="pcode">/tasks</span>&gt;</h4>
     <br>
-    <%= render 'users/expiring' %>
+
+    <h4>
+      &lt;
+      <span class="pcode">a </span>
+      <span class="ocode">class=</span>
+      <span class="gcode">"alert"</span>
+      &gt;
+      <span class="bcode"> <%= pluralize(@expiring_count, 'task') %> expiring!</span>
+      &lt;
+      <span class="pcode">/a</span>
+      &gt;
+    </h4>
     <br>
     <blockquote>
       <%= @quote %>
@@ -20,5 +31,5 @@
       <i><%= @author %></i>
     </blockquote>
   </div>
-</div>
+ </div>
 <p><%= link_to " Tasks", tasks_path, :class => 'btn btn-success btn-lg btn-block' %></p>

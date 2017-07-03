@@ -1,12 +1,7 @@
 class UsersController < ApplicationController
-  include UsersHelper
-
   def show
-    inspirational_quote =  generate_quote
-    @quote = inspirational_quote[0]
-    @author = inspirational_quote[1]
+    @quote, @author = GlobalConstants::INSPIRATIONAL_QUOTES.sample
     @tasks_todo = current_user.tasks.count
-    @expiring_tasks = expiring_tasks
+    @expiring_count = current_user.tasks.expiring.size
   end
-
 end
