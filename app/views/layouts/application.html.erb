@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Blocitoff</title>
+    <title>checkList</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -15,7 +15,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#top-navbar">
             <i class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></i>
           </button>
-          <span><%= link_to "Blocitoff", about_path, :class => 'navbar-brand' %></span>
+          <span><%= link_to "checkList", about_path, :class => 'navbar-brand' %></span>
         </div>
         <div class="collapse navbar-collapse" id="top-navbar">
           <% if user_signed_in? %>
