@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.8'
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.18.4'
   gem 'rails_12factor'
 end
 
@@ -50,6 +50,6 @@ group :development, :test do
   gem 'spring'
   gem 'rspec-rails'
   gem 'shoulda'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'pry-rails'
 end
